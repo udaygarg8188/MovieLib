@@ -2,7 +2,7 @@
 
 ## Movie List Application
 
-This is a full-stack movie lib application where users can sign up, log in, and manage their movie watch list and watched movies. The backend is built with Node.js, Express, and MongoDB, while the frontend is built with React.
+This is a full-stack movie list application where users can sign up, log in, and manage their movie watch list and watched movies. The backend is built with Node.js, Express, and MongoDB, while the frontend is built with React.
 
 ---
 
@@ -18,27 +18,30 @@ This is a full-stack movie lib application where users can sign up, log in, and 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/movielist.git
+   git clone https://github.com/udaygarg8188/MovieLib
    cd MovieLib/frontend
 Install dependencies:
 
 bash
+Copy code
 npm install
 Start the development server:
 
 bash
+Copy code
 npm start
 Open your browser and navigate to:
 
+plaintext
+Copy code
 http://localhost:3000
-
-### Screenshots:
+Screenshots:
 
 Screenshot 1:
 ![Screenshot 1](./images/Screenshot%202024-05-31%20150347.png)
 
 Screenshot 2:
-![Screenshot 2](./images/Screenshot%202024-05-31%20150619.png)
+![Screenshot 1](./images/Screenshot%202024-05-31%20150619.png)
 
 ### Backend
 Prerequisites
@@ -49,11 +52,13 @@ Getting Started
 Clone the repository:
 
 bash
-git clone https://github.com/yourusername/movielist.git
+Copy code
+git clone https://github.com/udaygarg8188/MovieLib
 cd MovieLib/backend
 Install dependencies:
 
 bash
+Copy code
 npm install
 Setup environment variables:
 
@@ -67,14 +72,18 @@ PORT=4000
 Start the server:
 
 bash
-nodemon
+Copy code
+npm start
 API Endpoints:
 
 Signup:
 
+plaintext
+Copy code
 POST /signup
 Request Body:
 json
+Copy code
 {
   "username": "example",
   "email": "example@example.com",
@@ -82,12 +91,15 @@ json
 }
 Response:
 json
+Copy code
 {
   "success": true,
   "token": "your_jwt_token"
 }
 Login:
 
+plaintext
+Copy code
 POST /login
 Request Body:
 json
@@ -98,6 +110,7 @@ Copy code
 }
 Response:
 json
+Copy code
 {
   "success": true,
   "token": "your_jwt_token"
