@@ -89,7 +89,7 @@ export const GlobalContextProvider = ({ children }) => {
   }, []);
 
   const fetchUserLists = async (token) => {
-    const response = await fetch('http://localhost:4000/userLists', {
+    const response = await fetch('https://movie-server-eight.vercel.app/userLists', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -108,7 +108,7 @@ export const GlobalContextProvider = ({ children }) => {
   // Actions
   const addMovieToWatchlist = async (movie) => {
     const token = getToken();
-    await fetch('http://localhost:4000/addMovieToWatchlist', {
+    await fetch('https://movie-server-eight.vercel.app/addMovieToWatchlist', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -121,7 +121,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   const removeMovieFromWatchList = async (id) => {
     const token = getToken();
-    await fetch(`http://localhost:4000/removeMovieFromWatchlist/${id}`, {
+    await fetch(`https://movie-server-eight.vercel.app/removeMovieFromWatchlist/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -133,7 +133,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   const addMovieToWatched = async (movie) => {
     const token = getToken();
-    await fetch('http://localhost:4000/addMovieToWatched', {
+    await fetch('https://movie-server-eight.vercel.app/addMovieToWatched', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   const moveToWatchlist = async (movie) => {
     const token = getToken();
-    await fetch('http://localhost:4000/moveToWatchlist', {
+    await fetch('https://movie-server-eight.vercel.app/moveToWatchlist', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -159,7 +159,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   const removeFromWatched = async (id) => {
     const token = getToken();
-    await fetch(`http://localhost:4000/removeFromWatched/${id}`, {
+    await fetch(`https://movie-server-eight.vercel.app/removeFromWatched/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
