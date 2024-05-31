@@ -1,0 +1,69 @@
+.add-page * {
+    box-sizing: border-box;
+  }
+  
+  .add-page .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .add-page .input-wrapper {
+    position: relative;
+  }
+  
+  .add-page input[type=text] {
+    padding: 15px 40px 15px 20px;
+    width: 20px;
+    color: #525252;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 100;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, #FFFFFF 0%, #F9F9F9 100%);
+    transition: width 0.4s ease;
+    outline: none;
+  }
+  
+  .add-page input[type=text]:focus {
+    width: 300px;
+  }
+  
+  .add-page i {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8233C5;
+  }
+  
+  .add-page .social {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+  }
+  
+  .add-page .social img {
+    display: block;
+    width: 32px;
+  }
+  
+  .add-page .results {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .add-page .results li {
+    margin: 10px;
+  }
+  
