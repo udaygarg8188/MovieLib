@@ -7,10 +7,10 @@ const app = express();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
-import ServerlessHttp from "serverless-http";
+
 mongoose.connect(process.env.mongo_url);
 
-const handler=ServerlessHttp(app);
+
 app.use(express.json());
 app.use(cors());
 
@@ -139,4 +139,4 @@ app.listen(port, (error) => {
   }
 });
 
-module.exports.handler =ServerlessHttp(app);
+module.exports=app;
