@@ -16,7 +16,7 @@ const Signup = () => {
     e.preventDefault(); // Prevent default form submission
     console.log("Signup Function Executed", formData);
     let responseData;
-    await fetch('https://movie-server-eight.vercel.app/signup', {
+    await fetch(`${process.env.REACT_APP_BACKURL}/signup`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -37,7 +37,7 @@ const Signup = () => {
     e.preventDefault(); // Prevent default form submission
     console.log("Login Function Executed", formData);
     let responseData;
-    await fetch('https://movie-server-eight.vercel.app/login', {
+    await fetch(`${process.env.REACT_APP_BACKURL}/login`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
