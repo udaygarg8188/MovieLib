@@ -1,14 +1,20 @@
+if(process.env.NODE_ENV !== 'production'){
+  require('dotenv').config();
+}
 const port = 4000;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const cors = require("cors");
+import ServerlessHttp from "serverless-http";
+mongoose.connect(process.env.mongo_url);
 
-mongoose.connect("mongodb+srv://udaygarg8188:Ecommerce12@cluster0.mvescac.mongodb.net/movie-list");
-
+const handler=ServerlessHttp(app);
 app.use(express.json());
 app.use(cors());
+
+
 
 const UserSchema = new mongoose.Schema({
   name: String,
@@ -32,7 +38,7 @@ const fetchUser = async (req, res, next) => {
     return res.status(401).send({ errors: "Please authenticate using a valid token" });
   }
   try {
-    const data = jwt.verify(token, 'secret_movie');
+    const data = jwt.verify(token, process.env.secret);
     req.user = data.user;
     next();
   } catch (error) {
@@ -57,7 +63,7 @@ app.post('/signup', async (req, res) => {
     user: { id: user.id }
   };
 
-  const token = jwt.sign(data, 'secret_movie');
+  const token = jwt.sign(data, process.env.secret);
   res.json({ success: true, token });
 });
 
@@ -69,7 +75,7 @@ app.post('/login', async (req, res) => {
       const data = {
         user: { id: user.id }
       };
-      const token = jwt.sign(data, 'secret_movie');
+      const token = jwt.sign(data, process.env.secret);
       res.json({ success: true, token });
     } else {
       res.json({ success: false, errors: "Wrong Password" });
@@ -128,3 +134,5 @@ app.listen(port, (error) => {
     console.log("Error : " + error);
   }
 });
+
+module.exports.handler =ServerlessHttp(app);
