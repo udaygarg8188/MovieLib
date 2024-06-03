@@ -127,6 +127,10 @@ app.delete('/removeFromWatched/:id', fetchUser, async (req, res) => {
   res.json(user.watched);
 });
 
+app.get("/",(req,res)=>{
+  res.json("you are on server side");
+});
+
 app.listen(port, (error) => {
   if (!error) {
     console.log("Server Running on Port " + port);
